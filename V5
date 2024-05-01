@@ -1,4 +1,4 @@
-Given an integer number n, return the difference between the product of its digits and the sum of its digits.
+1.(1281) Given an integer number n, return the difference between the product of its digits and the sum of its digits.
 Example 1:
 Input: n = 234
 Output: 15 
@@ -27,4 +27,30 @@ public:
         return res;
         
     }
+};
+
+
+
+2.(191)Write a function that takes the binary representation of a positive integer and returns the number of set bits it has (also known as the Hamming weight).
+Example 1:
+Input: n = 11
+Output: 3
+Explanation:
+The input binary string 1011 has a total of three set bits.
+
+ANSWER: 
+
+class Solution {
+public:
+    int hammingWeight(int n) {
+        int count=0;
+        while(n!=0){
+           if(n&1){
+            count++;
+           }
+            n=n>>1;
+        }
+        return count;
+    }
+    
 };
