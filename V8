@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+
+void IsEven(int n){
+    if(n%2==0){
+        cout<<"The number is even"<<endl;
+    }
+    else{
+        cout<<"The number is odd"<<endl;
+    }
+}
+
+bool IsPrime(int n){
+    for(int i=2;i<n/2;i++){
+        if(n%i==0){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+void calculator(int a , int b, char ch){
+  int ans;
+     switch(ch){
+        case '+':
+          ans=a+b;
+          cout<<ans<<endl;
+          break;
+        case '-':
+          ans=a-b;
+          cout<<ans<<endl;
+          break;
+        case '*':
+          ans=a*b;
+          cout<<ans<<endl;
+          break;
+        case '/':
+          ans=a/b;
+          cout<<ans<<endl;
+          break;
+        case '%':
+          ans=a%b;
+          cout<<ans<<endl;
+          break;
+        default:
+          cout<<"Invalid expression"<<endl;
+
+    }
+}
+int main(){
+    int a , b , x;
+    char ch;
+
+    cout<<"Enter a and b"<<endl;
+    cin>>a>>b;
+    cout<<"Enter operator"<<endl;
+    cin>>ch;
+
+    if(IsPrime(a)){
+        cout<<"the number is prime"<<endl;
+    }
+    else{
+        cout<<"the number is not prime"<<endl;
+    }
+
+    IsEven(a);
+    calculator(a,b,ch);
+
+   
+}
