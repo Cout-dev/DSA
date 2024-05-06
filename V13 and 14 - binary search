@@ -1,0 +1,63 @@
+QUESION 852 - Input: arr = [0,1,0]
+Output: 1
+
+ANSWER: 
+class Solution {
+public:
+    int peakIndexInMountainArray(vector<int>& arr) {
+        int s=0;
+        int e=arr.size()-1;
+        
+        int mid = s+((e-s)/2);
+        
+        while(s<e){
+            if(arr[mid]<arr[mid+1]){
+                s = mid+1;
+            }
+            else{
+                e = mid;
+            }
+            mid = s+((e-s)/2);
+        }
+        return mid;
+    }
+};
+
+
+
+QUESTION 69 - SQRT ROOT
+
+Input: x = 8
+Output: 2
+Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
+
+ANSWER: class Solution {
+public:
+    
+    int bs(int n){
+        int s=0;
+        int e=n;
+        long long int mid = s+((e-s)/2);
+        long long int ans  = -1;
+        while(s<=e){
+            long long int square = mid*mid;
+            
+            if(square == n){
+                return mid;
+            }
+            if(square < n){
+                ans = mid;
+                s = mid+1;
+            }
+            else{
+                e = mid - 1;
+            }
+            mid = s+((e-s)/2);
+        }
+        return ans;
+    }
+    
+    int mySqrt(int x) {
+        return bs(x);
+    }
+};
