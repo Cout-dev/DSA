@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+int fibo(int n){
+    if(n==0){
+        return 0;
+    }
+    if(n==1){
+       return 1;
+    }
+    return fibo(n-1) + fibo(n-2);
+
+}
+
+void print(int n){
+    string s[10]={"zero","one","two" ,"three", "four ", "five" , "six", "seven" , "eigth" ,"nine",};
+    if(n==0){
+        return;
+    }
+    int a = n%10;
+    print(n/10);
+    cout<<" "<<s[a] ;
+    return;
+
+}
+
+int main(){
+    int a=10;
+    print(a);
+    // cout<<b<<endl;
+
+}
